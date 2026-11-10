@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Kilat PC – PC &amp; Electronics Store</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f3f1ff;--ink:#14123a;--mute:#5b5883;--card:rgba(255,255,255,.74);--line:rgba(20,18,58,.14);--v:#5b3df5;--p:#ff3d7f;--y:#ffc933;--tile:#ebe7ff;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e0c26;--ink:#f1efff;--mute:#aaa6d6;--card:rgba(28,24,72,.72);--line:rgba(241,239,255,.16);--v:#8b73ff;--tile:#2a2566;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0e0c26;--ink:#f1efff;--mute:#aaa6d6;--card:rgba(28,24,72,.72);--line:rgba(241,239,255,.16);--v:#8b73ff;--tile:#2a2566;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.55 Manrope,system-ui,sans-serif;padding-bottom:110px}
+#bg{position:fixed;inset:0;width:100%;height:100%;z-index:-1}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--p);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+h1,h2,.logo{font-family:Unbounded,Manrope,sans-serif;letter-spacing:-.02em;line-height:1.1;margin:0}
+header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 0}
+.logo{font-size:20px;text-decoration:none;font-weight:800}
+.logo span{color:var(--p)}
+nav{display:flex;align-items:center;gap:18px;font-weight:600}
+nav a{text-decoration:none}
+nav .hide{display:none}
+@media(min-width:640px){nav .hide{display:inline}}
+.btn{display:inline-flex;align-items:center;gap:8px;border:0;border-radius:999px;padding:11px 20px;background:var(--v);color:#fff;font:800 15px Manrope,sans-serif;text-decoration:none;cursor:pointer;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-2px) rotate(-1deg);box-shadow:0 8px 20px rgba(91,61,245,.35)}
+.btn.wa{background:#18a957}
+.btn.ghost{background:transparent;color:var(--ink);border:2px solid var(--line)}
+.hero{display:grid;gap:32px;padding:36px 0 48px;align-items:center}
+@media(min-width:860px){.hero{grid-template-columns:1.05fr .95fr}}
+h1{font-size:clamp(34px,6vw,60px);font-weight:800}
+h1 em{font-style:normal;background:linear-gradient(90deg,var(--p),var(--y));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:18px;color:var(--mute);max-width:46ch;margin:18px 0 24px}
+.row{display:flex;flex-wrap:wrap;gap:12px}
+.finder{background:var(--card);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:28px;padding:24px;box-shadow:0 20px 50px rgba(40,20,120,.18)}
+.finder h2{font-size:20px;margin-bottom:14px}
+.lbl{font-weight:800;font-size:14px;margin:16px 0 8px;display:flex;justify-content:space-between}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:2px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;padding:8px 16px;font:700 14px Manrope,sans-serif;cursor:pointer;transition:background .15s,transform .15s}
+.chip:hover{transform:translateY(-2px)}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+input[type=range]{width:100%;accent-color:var(--p);height:28px}
+.spec{list-style:none;padding:0;margin:14px 0;display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:15px}
+.spec b{color:var(--mute);font-weight:600}
+.meter{display:grid;grid-template-columns:78px 1fr;gap:6px 10px;align-items:center;font-size:13px;font-weight:700;margin:12px 0 18px}
+.bar{height:10px;border-radius:99px;background:var(--tile);overflow:hidden}
+.bar i{display:block;height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,var(--v),var(--p));transition:width .5s cubic-bezier(.3,1.4,.5,1)}
+.deal{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;background:var(--y);color:#2a1d00;border-radius:20px;padding:14px 20px;font-weight:800}
+.deal time{font:800 22px Unbounded,monospace;letter-spacing:.02em}
+section{padding:48px 0 8px}
+section h2{font-size:clamp(26px,4vw,38px);margin-bottom:8px}
+.sub{color:var(--mute);margin:0 0 20px}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));margin-top:20px}
+.card{background:var(--card);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:20px;padding:14px;display:flex;flex-direction:column;gap:10px;transition:transform .2s}
+.card:hover{transform:translateY(-4px)}
+.tile{height:112px;border-radius:14px;background:var(--tile);display:grid;place-items:center;font-size:54px}
+.card h3{font-size:16px;margin:0;line-height:1.3}
+.price{font-weight:800;font-size:18px}
+.price s{font-weight:400;font-size:13px;color:var(--mute);margin-left:6px}
+.tag{align-self:flex-start;font-size:12px;font-weight:800;background:var(--p);color:#fff;border-radius:99px;padding:2px 10px}
+.card .btn{justify-content:center;margin-top:auto;padding:9px 16px}
+.steps{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin-top:16px}
+.steps div{border-left:4px solid var(--p);padding:4px 0 4px 14px}
+.steps b{display:block;font-size:17px}
+.steps span{color:var(--mute)}
+footer{margin-top:56px;padding:32px 0;border-top:1px solid var(--line)}
+footer h2{font-size:24px;margin-bottom:10px}
+#cart{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));max-width:720px;margin:0 auto;background:var(--ink);color:var(--bg);border-radius:22px;padding:12px 14px 12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;box-shadow:0 14px 40px rgba(0,0,0,.35);transform:translateY(160%);transition:transform .35s cubic-bezier(.3,1.3,.5,1)}
+#cart.on{transform:none}
+#cart b{font-size:17px}
+#cart small{display:block;opacity:.75}
+#cart .clr{background:none;border:0;color:inherit;text-decoration:underline;font:600 13px Manrope;cursor:pointer}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<canvas id="bg" aria-hidden="true"></canvas>
+
+<div class="wrap">
+<header>
+  <a class="logo" href="#top">MURAH MERIAH<span>PC</span></a>
+  <nav>
+    <a class="hide" href="#shop">Shop</a>
+    <a class="hide" href="#how">How it works</a>
+    <a class="btn wa" href="https://wa.me/6288807131852" target="_blank" rel="noopener">Chat +62 888 0713 1852</a>
+  </nav>
+</header>
+
+<main id="top">
+<div class="hero">
+  <div>
+    <h1>Build the PC you’ll <em>actually love.</em></h1>
+    <p class="lead">Tell us what you do and what you can spend. We’ll match a build, then send you a price on WhatsApp. New and tested electronics, delivered to your door.</p>
+    <div class="row">
+      <a class="btn" href="#shop">Browse the shop</a>
+      <a class="btn ghost" href="tel:+6288807131852">Call +62 888 0713 1852</a>
+    </div>
+  </div>
+
+  <div class="finder" id="finder">
+    <h2>Find your PC in 10 seconds</h2>
+    <div class="lbl">What will you use it for?</div>
+    <div class="chips" id="uses">
+      <button class="chip" data-u="gaming" aria-pressed="true">🎮 Gaming</button>
+      <button class="chip" data-u="edit" aria-pressed="false">🎬 Video &amp; design</button>
+      <button class="chip" data-u="office" aria-pressed="false">💼 Office &amp; school</button>
+    </div>
+    <div class="lbl"><label for="bud">Your budget</label><span id="budv"></span></div>
+    <input id="bud" type="range" min="4" max="30" step="1" value="12">
+    <ul class="spec" id="spec"></ul>
+    <div class="meter" id="meter"></div>
+    <a class="btn wa" id="quote" href="#" target="_blank" rel="noopener">Get this quote on WhatsApp</a>
+  </div>
+</div>
+
+<div class="deal">
+  <span>Today only: 10% off all accessories. Ends in</span>
+  <time id="clock">12:00:00</time>
+</div>
+
+<section id="shop">
+  <h2>In stock now</h2>
+  <p class="sub">Tap Add, then send your list to us on WhatsApp. No account needed.</p>
+  <div class="chips" id="cats"></div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<section id="how">
+  <h2>How it works</h2>
+  <div class="steps">
+    <div><b>1. Pick or ask</b><span>Use the finder, add items, or just message us what you need.</span></div>
+    <div><b>2. Confirm on WhatsApp</b><span>We check stock, answer questions, and confirm the final price.</span></div>
+    <div><b>3. Pay and receive</b><span>Choose delivery or pick-up. Every item is tested before it ships.</span></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <h2>Need help choosing?</h2>
+  <p class="sub">Message us anytime. We reply with a real recommendation, not a sales script.</p>
+  <div class="row">
+    <a class="btn wa" href="https://wa.me/6288807131852?text=Hi%20Kilat%20PC%2C%20I%20have%20a%20question." target="_blank" rel="noopener">WhatsApp +62 888 0713 1852</a>
+    <a class="btn ghost" href="tel:+6288807131852">Call us</a>
+  </div>
+</footer>
+</div>
+
+<div id="cart" role="status" aria-live="polite">
+  <div><b id="cn">0 items</b><small id="ct"></small></div>
+  <div class="row" style="align-items:center;flex-wrap:nowrap">
+    <button class="clr" id="clr">Clear</button>
+    <a class="btn wa" id="order" href="#" target="_blank" rel="noopener">Order on WhatsApp</a>
+  </div>
+</div>
+
+<script>
+const WA='6288807131852';
+const wa=t=>`https://wa.me/${WA}?text=${encodeURIComponent(t)}`;
+const rp=n=>'Rp '+Math.round(n).toLocaleString('id-ID');
+const $=id=>document.getElementById(id);
+
+/* ---------- PC finder ---------- */
+const SPEC={
+ gaming:[['Ryzen 5 5500','GTX 1650 4GB','16GB DDR4','512GB SSD'],['Ryzen 5 7500F','RTX 4060 8GB','16GB DDR5','1TB NVMe'],['Ryzen 7 7800X3D','RTX 4070 Super','32GB DDR5','2TB NVMe']],
+ edit:[['Ryzen 5 5600G','Integrated Vega','16GB DDR4','512GB SSD'],['Core i5-13400','RTX 3050 8GB','32GB DDR4','1TB NVMe'],['Ryzen 9 7900','RTX 4070','64GB DDR5','2TB NVMe']],
+ office:[['Core i3-12100','Intel UHD','8GB DDR4','256GB SSD'],['Core i5-12400','Intel UHD','16GB DDR4','512GB SSD'],['Core i7-13700','Intel UHD','32GB DDR5','1TB NVMe']]
+};
+const BASE=[[28,22,70],[62,55,88],[90,90,98]];
+const NAMES=['Games','Editing','Everyday'],IDX={gaming:0,edit:1,office:2};
+let use='gaming';
+function find(){
+  const b=+$('bud').value, t=b<=7?0:b<=15?1:2;
+  $('budv').textContent='Rp '+b+' million';
+  $('spec').innerHTML=SPEC[use][t].map((v,i)=>`<b>${['CPU','Graphics','Memory','Storage'][i]}</b><span>${v}</span>`).join('');
+  const sc=BASE[t].map((v,i)=>Math.min(100,v+(i===IDX[use]?8:0)));
+  $('meter').innerHTML=sc.map((v,i)=>`<span>${NAMES[i]}</span><div class="bar"><i style="width:${v}%"></i></div>`).join('');
+  $('quote').href=wa(`Hi Kilat PC, I need a PC for ${{gaming:'gaming',edit:'video and design',office:'office and school'}[use]} with a budget of Rp ${b} million. Build idea: ${SPEC[use][t].join(', ')}. Can you send a quote?`);
+}
+$('uses').addEventListener('click',e=>{
+  const c=e.target.closest('.chip'); if(!c) return;
+  use=c.dataset.u;
+  document.querySelectorAll('#uses .chip').forEach(x=>x.setAttribute('aria-pressed',x===c));
+  find();
+});
+$('bud').addEventListener('input',find);
+find();
+// animate bars on first paint
+requestAnimationFrame(()=>setTimeout(find,60));
+
+/* ---------- Shop ---------- */
+const P=[
+ {n:'Gaming PC Ryzen 5 + RTX 4060',p:12900000,c:'PC',e:'🖥️'},
+ {n:'Office PC Core i3, 16GB, SSD',p:4800000,c:'PC',e:'🗄️'},
+ {n:'Laptop 14" Ryzen 5, 16GB',p:7500000,c:'Laptop',e:'💻'},
+ {n:'Gaming Laptop RTX 4050',p:14900000,c:'Laptop',e:'🎮'},
+ {n:'Smartwatch with heart-rate',p:600000,c:'Gadget',e:'⌚'},
+ {n:'Wireless earbuds (TWS)',p:350000,c:'Gadget',e:'🎧'},
+ {n:'Power bank 20,000 mAh',p:280000,c:'Gadget',e:'🔋'},
+ {n:'Monitor 27" 165Hz',p:2700000,c:'Accessories',e:'🖼️'},
+ {n:'Mechanical keyboard',p:450000,c:'Accessories',e:'⌨️'},
+ {n:'Gaming mouse 12,000 DPI',p:250000,c:'Accessories',e:'🖱️'}
+];
+const cats=['All',...new Set(P.map(x=>x.c))];
+let cat='All',cart={};
+const price=x=>x.c==='Accessories'?x.p*.9:x.p;
+
+$('cats').innerHTML=cats.map(c=>`<button class="chip" data-c="${c}" aria-pressed="${c==='All'}">${c}</button>`).join('');
+$('cats').addEventListener('click',e=>{
+  const b=e.target.closest('.chip'); if(!b) return;
+  cat=b.dataset.c;
+  document.querySelectorAll('#cats .chip').forEach(x=>x.setAttribute('aria-pressed',x===b));
+  draw();
+});
+function draw(){
+  $('grid').innerHTML=P.map((x,i)=>({x,i})).filter(o=>cat==='All'||o.x.c===cat).map(({x,i})=>`
+  <article class="card">
+    <div class="tile" aria-hidden="true">${x.e}</div>
+    ${x.c==='Accessories'?'<span class="tag">-10% today</span>':''}
+    <h3>${x.n}</h3>
+    <div class="price">${rp(price(x))}${x.c==='Accessories'?`<s>${rp(x.p)}</s>`:''}</div>
+    <button class="btn" data-i="${i}">Add${cart[i]?' ('+cart[i]+')':''}</button>
+  </article>`).join('');
+}
+$('grid').addEventListener('click',e=>{
+  const b=e.target.closest('button[data-i]'); if(!b) return;
+  const i=b.dataset.i; cart[i]=(cart[i]||0)+1; draw(); upd();
+});
+$('clr').onclick=()=>{cart={};draw();upd()};
+function upd(){
+  const ids=Object.keys(cart), n=ids.reduce((s,i)=>s+cart[i],0);
+  const tot=ids.reduce((s,i)=>s+cart[i]*price(P[i]),0);
+  $('cart').classList.toggle('on',n>0);
+  $('cn').textContent=n+(n===1?' item':' items');
+  $('ct').textContent='Total '+rp(tot);
+  $('order').href=wa('Hi Kilat PC, I want to order:\n'+ids.map(i=>`- ${P[i].n} x${cart[i]} (${rp(price(P[i]))})`).join('\n')+`\nTotal: ${rp(tot)}\nIs it in stock?`);
+}
+draw();
+
+/* ---------- Countdown ---------- */
+function tick(){
+  const d=new Date(), end=new Date(d); end.setHours(24,0,0,0);
+  const s=Math.floor((end-d)/1000), p=n=>String(n).padStart(2,'0');
+  $('clock').textContent=`${p(Math.floor(s/3600))}:${p(Math.floor(s%3600/60))}:${p(s%60)}`;
+}
+tick(); setInterval(tick,1000);
+
+/* ---------- Moving background ---------- */
+const cv=$('bg'),cx=cv.getContext('2d'),rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+let W,H,pts=[],mx=-999,my=-999,t=0;
+const blobs=[[91,61,245,.5,.3,.0007],[255,61,127,.75,.7,.0009],[255,201,51,.3,.85,.0006]];
+function size(){
+  const r=devicePixelRatio||1; W=innerWidth; H=innerHeight;
+  cv.width=W*r; cv.height=H*r; cx.setTransform(r,0,0,r,0,0);
+  const n=Math.min(90,Math.floor(W*H/16000));
+  pts=Array.from({length:n},()=>({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.5,vy:(Math.random()-.5)*.5}));
+}
+function dark(){const d=document.documentElement.dataset.theme;return d?d==='dark':matchMedia('(prefers-color-scheme: dark)').matches}
+function frame(){
+  t++; cx.clearRect(0,0,W,H);
+  const dk=dark(), a=dk?.3:.22;
+  blobs.forEach(([r,g,b,fx,fy,sp],i)=>{
+    const x=W*(fx+.28*Math.sin(t*sp*8+i*2)), y=H*(fy+.22*Math.cos(t*sp*7+i)), rad=Math.max(W,H)*.42;
+    const gr=cx.createRadialGradient(x,y,0,x,y,rad);
+    gr.addColorStop(0,`rgba(${r},${g},${b},${a})`); gr.addColorStop(1,`rgba(${r},${g},${b},0)`);
+    cx.fillStyle=gr; cx.fillRect(0,0,W,H);
+  });
+  const lc=dk?'180,170,255':'91,61,245';
+  for(const p of pts){
+    const dx=p.x-mx, dy=p.y-my, d=Math.hypot(dx,dy);
+    if(d<130){p.x+=dx/d*1.4; p.y+=dy/d*1.4}
+    p.x+=p.vx; p.y+=p.vy;
+    if(p.x<0||p.x>W)p.vx*=-1; if(p.y<0||p.y>H)p.vy*=-1;
+  }
+  for(let i=0;i<pts.length;i++){
+    const p=pts[i];
+    cx.fillStyle=`rgba(${lc},.7)`; cx.beginPath(); cx.arc(p.x,p.y,2,0,6.3); cx.fill();
+    for(let j=i+1;j<pts.length;j++){
+      const q=pts[j], d=Math.hypot(p.x-q.x,p.y-q.y);
+      if(d<110){cx.strokeStyle=`rgba(${lc},${.28*(1-d/110)})`; cx.beginPath(); cx.moveTo(p.x,p.y); cx.lineTo(q.x,q.y); cx.stroke()}
+    }
+    const dm=Math.hypot(p.x-mx,p.y-my);
+    if(dm<170){cx.strokeStyle=`rgba(255,61,127,${.6*(1-dm/170)})`; cx.beginPath(); cx.moveTo(p.x,p.y); cx.lineTo(mx,my); cx.stroke()}
+  }
+  if(!rm) requestAnimationFrame(frame);
+}
+addEventListener('pointermove',e=>{mx=e.clientX;my=e.clientY});
+addEventListener('pointerleave',()=>{mx=my=-999});
+addEventListener('resize',()=>{size(); if(rm) frame()});
+size(); frame();
+</script>
+</body>
+</html>
